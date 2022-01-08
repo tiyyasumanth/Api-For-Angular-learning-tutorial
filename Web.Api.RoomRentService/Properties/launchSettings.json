@@ -1,0 +1,45 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:65401",
+      "sslPort": 44398
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "Swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "ge4",
+        "DB_ApiEndUrl": "https://csf-dbconnectiondetails-api-ge2.ausvdc02.pcf.dell.com/api/dbconnection/read",
+        "DB_Environment": "GE4",
+        "DB_Name": "CSF_Asset",
+        "DB_Name_Log": "CSF_Log",
+        "DB_SecretKey": "DellCSFTeam",
+        "ssologinurl": "https://appsso.login.sausvdc02.pcf.dell.com",
+        "ssoclientid": "0f56eb34-2d84-4676-baa3-0d4f9cd093f1"
+      }
+    },
+
+    "CustomerSearch.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Swagger",
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "ge4",
+        "DB_ApiEndUrl": "https://csf-dbconnectiondetails-api-ge2.ausvdc02.pcf.dell.com/api/dbconnection/read",
+        "DB_Environment": "GE4",
+        "DB_Name": "CSF_Asset",
+        "DB_Name_Log": "CSF_Log",
+        "DB_SecretKey": "DellCSFTeam",
+        "ssologinurl": "https://appsso.login.sausvdc02.pcf.dell.com",
+        "ssoclientid": "0f56eb34-2d84-4676-baa3-0d4f9cd093f1"
+      }
+    }
+  }
+}
