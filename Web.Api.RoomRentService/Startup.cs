@@ -32,6 +32,25 @@ namespace Web.Api.RoomRentService
         {
             services.AddControllers();
 
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CORS",
+                builder => builder
+                .WithOrigins(
+                 "http://localhost:4200",
+                 "http://localhost:4201"
+                )
+                //.AllowAnyOrigin()
+                // Apply CORS policy for any type of origin
+                .AllowAnyMethod()
+                // Apply CORS policy for any type of http methods
+                .AllowAnyHeader()
+                // Apply CORS policy for any headers
+                .AllowCredentials());
+                // Apply CORS policy for all users
+            });
+
             //Add jwt authentication
             services.AddAuthentication(x =>
             {
@@ -72,10 +91,11 @@ namespace Web.Api.RoomRentService
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("CORS");
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/1.0.0/swagger.json", "ServiceTagsDetails API V1");
+                c.SwaggerEndpoint("/swagger/1.0.0/swagger.json", "Reltal App Service API V1");
             });
 
             app.UseHttpsRedirection();

@@ -27,12 +27,12 @@ namespace Web.Api.RoomRentService.Controllers
         /// </summary>
         /// <param name="asset"></param>
         /// <returns></returns>
-        [HttpPost("api/user/write")]
+        [HttpPost("api/user/register")]
         [Authorize]
         [SwaggerResponse(statusCode: 200, type: typeof(Token), description: "Sucessful Response")]
-        public async Task<IActionResult> WriteUserDetails([FromBody]UserRequest userRequest)
+        public async Task<IActionResult> WriteUserDetails([FromBody]RegistrationEntity userRequest)
         {
-            return Ok("");
+            return Ok("Success");
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Web.Api.RoomRentService.Controllers
         /// </summary>
         /// <param name="asset"></param>
         /// <returns></returns>
-        [HttpPost("api/token/jwt")]
+        [HttpPost("api/generate/token/jwt")]
         [AllowAnonymous]
         [SwaggerResponse(statusCode: 200, type: typeof(Token), description: "Sucessful Response")]
         public async Task<IActionResult> GenerateJwt([FromBody]UserRequest userRequest)
